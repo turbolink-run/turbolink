@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 import { ThemeProvider } from '@/components/theme-provider';
 import { fontMono, fontSans } from '@/config/fonts';
@@ -34,6 +35,10 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <Script
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "0cc2e38edcde4bd4b2efdd6130b23cad"}'
+        />
       </body>
     </html>
   );
