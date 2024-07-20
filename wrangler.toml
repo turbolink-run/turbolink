@@ -1,0 +1,12 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "turbolink"
+compatibility_date = "2024-07-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+[placement]
+mode = "smart"
+
+[[kv_namespaces]]
+binding = "__NEXT_ON_PAGES__KV_SUSPENSE_CACHE"
+id = "ced2cc8212114448931c813af31efefb"
