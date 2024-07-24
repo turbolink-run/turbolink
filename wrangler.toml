@@ -10,3 +10,8 @@ mode = "smart"
 [[kv_namespaces]]
 binding = "__NEXT_ON_PAGES__KV_SUSPENSE_CACHE"
 id = "ced2cc8212114448931c813af31efefb"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "prod-turbolink-d1"
+database_id = "3578bc5e-8595-4a95-af6e-2d8d09099721"

@@ -4,13 +4,13 @@ import { cva, VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
 
-export interface PagePlaceholderProps
+export interface MagicTitleProps
   extends React.HTMLAttributes<HTMLSpanElement>,
-    VariantProps<typeof pagePlaceholderVariants> {
+    VariantProps<typeof magicTitleVariants> {
   children: React.ReactNode;
 }
 
-const pagePlaceholderVariants = cva(
+const magicTitleVariants = cva(
   'animate-gradient-x bg-gradient-to-r from-purple-500 via-red-500 to-amber-500 bg-clip-text font-extrabold text-transparent',
   {
     variants: {
@@ -26,17 +26,14 @@ const pagePlaceholderVariants = cva(
   },
 );
 
-export default function PagePlaceholder({
+export default function MagicTitle({
   size,
   className,
   children,
   ...props
-}: PagePlaceholderProps) {
+}: MagicTitleProps) {
   return (
-    <span
-      className={cn(pagePlaceholderVariants({ size, className }))}
-      {...props}
-    >
+    <span className={cn(magicTitleVariants({ size, className }))} {...props}>
       {children}
     </span>
   );

@@ -2,7 +2,8 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:eslint-plugin-next-on-pages/recommended",
+    "plugin:drizzle/recommended",
     "prettier"
   ],
-  "plugins": ["eslint-plugin-next-on-pages"]
+  "plugins": ["eslint-plugin-next-on-pages", "drizzle"]
 }
