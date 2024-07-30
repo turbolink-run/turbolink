@@ -28,7 +28,7 @@
     "@lucia-auth/adapter-drizzle": "1.0.7",
     "@radix-ui/react-slot": "1.1.0",
     "@t3-oss/env-nextjs": "0.11.0",
-    "@tanstack/react-query": "5.51.15",
+    "@tanstack/react-query": "5.51.16",
     "@trpc/client": "11.0.0-rc.467",
     "@trpc/next": "11.0.0-rc.467",
     "@trpc/react-query": "11.0.0-rc.467",
@@ -51,7 +51,7 @@
     "zod": "3.23.8"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "1.12.1",
+    "@cloudflare/next-on-pages": "1.13.1",
     "@cloudflare/workers-types": "4.20240725.0",
     "@ianvs/prettier-plugin-sort-imports": "4.3.1",
     "@libsql/client": "0.8.0",
@@ -67,13 +67,13 @@
     "eslint-config-next": "14.2.5",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-drizzle": "0.2.3",
-    "eslint-plugin-next-on-pages": "1.12.1",
+    "eslint-plugin-next-on-pages": "1.13.1",
     "postcss": "8.4.40",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.5",
     "tailwindcss": "3.4.7",
     "typescript": "5.5.4",
-    "vercel": "35.2.1",
+    "vercel": "35.2.2",
     "wrangler": "3.67.1"
   }
 }
