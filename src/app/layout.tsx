@@ -1,3 +1,5 @@
+import '@/styles/globals.css';
+
 import type { Metadata } from 'next';
 import Script from 'next/script';
 
@@ -5,8 +7,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { fontMono, fontSans } from '@/config/fonts';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
-
-import './globals.css';
+import { TRPCReactProvider } from '@/trpc/react';
 
 export const metadata: Metadata = {
   title: {
@@ -27,14 +28,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(fontSans.variable, fontMono.variable)}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <TRPCReactProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </TRPCReactProvider>
         <Script
           src="https://static.cloudflareinsights.com/beacon.min.js"
           data-cf-beacon='{"token": "0cc2e38edcde4bd4b2efdd6130b23cad"}'
