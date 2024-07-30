@@ -5,11 +5,13 @@ import { and, eq } from 'drizzle-orm';
 import { generateIdFromEntropySize } from 'lucia';
 import { z } from 'zod';
 
+import WelcomeEmail from '@/emails/welcome';
 import { env } from '@/env';
 import { lucia } from '@/server/auth/lucia';
 import { google } from '@/server/auth/providers/google';
 import { db } from '@/server/db';
 import { oauthAccountTable, userTable } from '@/server/db/schema';
+import { resend } from '@/server/resend';
 
 export const runtime = 'edge';
 
@@ -113,6 +115,13 @@ export async function GET(request: Request): Promise<Response> {
         userId,
       }),
     ]);
+
+    await resend.emails.send({
+      from: 'Contact <contact@turbol.ink>',
+      to: googleUser.email,
+      subject: 'Welcome to Turbolink',
+      react: WelcomeEmail({ name: googleUser.name }),
+    });
 
     const session = await lucia.createSession(userId, {});
     const sessionCookie = lucia.createSessionCookie(session.id);

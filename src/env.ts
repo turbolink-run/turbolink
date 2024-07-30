@@ -17,6 +17,7 @@ export const env = createEnv({
     AUTH_SECRET: z.string(),
     GOOGLE_CLIENT_ID: z.string(),
     GOOGLE_CLIENT_SECRET: z.string(),
+    RESEND_API_KEY: z.string(),
   },
 
   /**
@@ -33,6 +34,7 @@ export const env = createEnv({
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
+    // Server-side env vars
     NODE_ENV: process.env.NODE_ENV,
     LOCAL_DB_PATH: process.env.LOCAL_DB_PATH,
     CLOUDFLARE_ACCOUNT_ID: process.env.CLOUDFLARE_ACCOUNT_ID,
@@ -41,6 +43,9 @@ export const env = createEnv({
     AUTH_SECRET: process.env.AUTH_SECRET,
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
+
+    // Client-side env vars
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
   },
   /**

@@ -13,6 +13,7 @@ import { ZodError } from 'zod';
 
 import { uncachedAuth } from '@/server/auth';
 import { db } from '@/server/db';
+import { resend } from '@/server/resend';
 
 /**
  * 1. CONTEXT
@@ -31,6 +32,7 @@ export const createTRPCContext = async (opts: { headers: Headers }) => {
 
   return {
     db,
+    resend,
     user,
     session,
     ...opts,
